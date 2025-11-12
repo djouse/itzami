@@ -8,13 +8,13 @@ export function Navbar() {
       </a>
       <div className="nav-links">
         <a href="#work" className="nav-link">
-          Work
+          work
         </a>
         <a href="#about" className="nav-link">
-          About
+          about
         </a>
         <a href="#contacts" className="nav-link">
-          Contacts
+          contacts
         </a>
       </div>
     </nav>
