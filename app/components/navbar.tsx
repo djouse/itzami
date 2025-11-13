@@ -4,7 +4,8 @@ export function Navbar() {
   return (
     <nav className="navbar">
       <a href="#" className="brand">
-        jose dias
+        <h4>jose dias</h4>
+        <p>software engineer</p>
       </a>
       <div className="nav-links">
         <a href="#work" className="nav-link">

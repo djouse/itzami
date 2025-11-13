@@ -56,12 +56,15 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
   background-color: #fff;
   box-shadow: 0 1px 2px rgba(0,0,0,0.06);
   position: sticky;
   top: 0;
   z-index: 10;
+  padding-left: 1.5rem;
+  padding-bottom: 0.5rem;
+  padding-right: 1.5rem;
+  padding-top: 0.5rem;
 }
 
 .brand {
@@ -70,6 +73,14 @@ body {
   color: #1f2937;
   text-decoration: none;
   letter-spacing: 0.02em;
+  line-height: 0.9;
+}
+
+.brand p {
+  margin: 0;
+  font-weight: 1;
+  font-size: 0.875rem;
+
 }
 
 .nav-links {
@@ -94,21 +105,20 @@ body {
 ------------------------------ */
 .footer {
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
   align-items: center;
   padding: 1rem 2rem;
-  background-color: #f8f8f8;
   border-top: 1px solid #e5e7eb;
 }
 
 .footer-links {
   display: flex;
-  gap: 1rem;
+  gap: 0.5rem;
 }
 
 .footer-link .icon {
-  width: 24px;
-  height: 24px;
+  width: 20px;
+  height: 20px;
   opacity: 0.9;
   transition: transform 0.2s ease, opacity 0.2s ease;
 }
