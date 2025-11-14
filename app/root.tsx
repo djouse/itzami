@@ -8,6 +8,7 @@ import {
 } from "react-router";
 
 import type { Route } from "./+types/root";
+import React from "react";
 import { Navbar } from "./components/navbar";
 import "./styles/style.css";
 import { Footer } from "./components/footer";
@@ -45,6 +46,8 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
 export default function App() {
   return (
+
+    
     <div className="app-layout">
       <Navbar />
       <main className="main-content">
