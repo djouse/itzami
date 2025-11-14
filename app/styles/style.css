@@ -98,10 +98,27 @@ body {
 }
 
 .nav-link:hover {
-  color: #2563eb; /* blue-600 */
+  color: #232324; /* blue-600 */
   transform: translateY(-1px);
 }
 
+/* ------------------------------
+   on Click go up effect
+------------------------------ */
+
+.up-onClick:hover{
+    display: flex;
+}
+
+.up-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+}
+.up-icon:hover{
+
+    transform: translateY(-1px);
+    transform: scale(1.05)
+}
 /* ------------------------------
    Footer
 ------------------------------ */

@@ -1,5 +1,5 @@
 import "../styles/style.css";
-
+import upActivity from "../assets/up-onClick.svg";
 export function MainPage() {
   return (
     <div>
@@ -7,6 +7,9 @@ export function MainPage() {
         <div className="introduction-section">
           <h1>portfolio website</h1>
           <p>hope you enjoy.</p>
+        </div>
+        <div className="up-onClick">
+          <img src={upActivity} alt="Up on Click Activity" className="up-icon" />
         </div>
         <div className="separator-section">
         </div>
