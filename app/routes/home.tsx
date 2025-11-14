@@ -4,8 +4,8 @@ import { MainPage } from "../pages/main-page";
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "New React Router App" },
-    { name: "description", content: "Welcome to React Router!" },
+    { title: "Jose | Portfolio" },
+    { name: "Jose | Portfolio", content: "Jose | Portfolio" },
   ];
 }
 
