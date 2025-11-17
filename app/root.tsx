@@ -8,7 +8,6 @@ import {
 } from "react-router";
 
 import type { Route } from "./+types/root";
-import React from "react";
 import { Navbar } from "./components/navbar";
 import "./styles/style.css";
 import { Footer } from "./components/footer";
@@ -46,8 +45,6 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
 export default function App() {
   return (
-
-    
     <div className="app-layout">
       <Navbar />
       <main className="main-content">
@@ -75,14 +72,20 @@ export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
   }
 
   return (
-    <main className="pt-16 p-4 container mx-auto">
-      <h1>{message}</h1>
-      <p>{details}</p>
-      {stack && (
-        <pre className="w-full p-4 overflow-x-auto">
-          <code>{stack}</code>
-        </pre>
-      )}
-    </main>
+    <div className="app-layout">
+      <Navbar />
+      <main className="main-content">
+        <div className="pt-16 p-4">
+          <h1>{message}</h1>
+          <p>{details}</p>
+          {stack && (
+            <pre className="w-full p-4 overflow-x-auto">
+              <code>{stack}</code>
+            </pre>
+          )}
+        </div>
+      </main>
+      <Footer />
+    </div>
   );
 }

@@ -1,6 +1,14 @@
 import "../styles/style.css";
+import type { Route } from "./+types/about-page";
 
-export function MainPage() {
+export function meta({}: Route.MetaArgs) {
+  return [
+    { title: "About | Jose Portfolio" },
+    { name: "description", content: "About Jose" },
+  ];
+}
+
+export default function AboutPage() {
   return (
     <div>
       <main className="main-page">

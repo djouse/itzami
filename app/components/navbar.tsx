@@ -1,20 +1,20 @@
-import { NavLink } from "react-router";
+import { Link } from "react-router";
 import "../styles/style.css";
 
 export function Navbar() {
   return (
     <nav className="navbar">            
-      <NavLink to="/" end className="brand">
+      <Link to="/" className="brand">
         <h4>jose dias</h4>
         <p>software engineer</p>
-      </NavLink>
+      </Link>
       <div className="nav-links">
-        <NavLink to="/about" className="nav-link">
+        <Link to="/about" className="nav-link">
           about
-        </NavLink>
-        <NavLink to="/contact" className="nav-link">
+        </Link>
+        <Link to="/contact" className="nav-link">
           contacts
-        </NavLink>
+        </Link>
       </div>
     </nav>
   );
