@@ -12,13 +12,14 @@ export function meta({}: Route.MetaArgs) {
 export default function Home() {
   return (
     <div>
-      <main className="main-page">
-        <div className="introduction-section">
-          <h1>portfolio website</h1>
-          <p>hope you enjoy.</p>
-        </div>
+      <main className="main-page ">
         <div className="up-onClick">
           <img src={upActivity} alt="Up on Click Activity" className="up-icon" />
+        </div>
+        <div className="introduction-section">
+          <h1>portfolio website</h1>
+          <p></p>
+          <p>hope you enjoy.</p>
         </div>
         <div className="separator-section">
         </div>

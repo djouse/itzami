@@ -1,6 +1,9 @@
 /* ------------------------------
    Global Reset & Base Styles
 ------------------------------ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -9,7 +12,7 @@
 
 html {
   scroll-behavior: smooth;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
 /* Make sure the page fills the viewport */
@@ -32,7 +35,6 @@ html, body {
 
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
   font-size: 16px;
   line-height: 1.6;
   color: #111827; /* gray-900 */
@@ -49,6 +51,42 @@ body {
   margin: 0 auto;
   padding: 0 1rem;
 }
+.introduction-section {
+  display: block;
+  container-type: inline-size;
+  margin: 8rem 3rem 5rem 3rem;
+  
+}
+.introduction-section h1{
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+  font-size: clamp(4rem, 10cqw, 12rem); /* cqw = container query width */
+  text-transform:uppercase;
+  letter-spacing: -1px;
+  font-weight: 600;
+  line-height: 0.9;
+  margin-bottom: clamp(2rem, 4cqw, 5rem);
+}
+
+.separator-section {
+  width: 100%;
+  border-style: solid;
+  border-width: 0.1rem;
+}
+.introduction-section p{
+  font-size: clamp(2rem, 7cqw, 5rem); /* cqw = container query width */
+  text-transform:uppercase;
+  letter-spacing: -1px;
+  font-weight: 400;
+  line-height: 0.9;
+}
+/* ------------------------------
+   Typography
+------------------------------ */
 
 /* ------------------------------
    Navbar
@@ -58,7 +96,9 @@ body {
   justify-content: space-between;
   align-items: center;
   background-color: #fff;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.06);
+  border-bottom: 0.12rem solid rgba(0, 0, 0, 0);
+  border-bottom-color: #111827;
+
   position: sticky;
   top: 0;
   z-index: 10;
@@ -70,7 +110,7 @@ body {
 
 .brand {
   font-size: 1.25rem;
-  font-weight: 700;
+  font-weight: 500;
   color: #1f2937;
   text-decoration: none;
   letter-spacing: 0.02em;
@@ -78,9 +118,13 @@ body {
   
 }
 
+.brand h4 {
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
 .brand p {
-  margin: 0;
-  font-weight: 1;
+  font-weight: 300;
   font-size: 0.875rem;
 
 }
@@ -105,19 +149,19 @@ body {
 /* ------------------------------
    on Click go up effect
 ------------------------------ */
-
-.up-onClick:hover{
-    display: flex;
-}
-
 .up-icon {
-    width: 2.5rem;
-    height: 2.5rem;
+  position: fixed; /* Use fixed instead of sticky */
+  right: 1rem;
+  top: 5rem; /* Position below navbar */
+  width: 5rem;
+  height: 5rem;
+  z-index: 9; /* Below navbar (10) but above content */
+  cursor: pointer;
+  transition: transform 0.2s ease;
 }
-.up-icon:hover{
 
-    transform: translateY(-1px);
-    transform: scale(1.05)
+.up-icon:hover {
+  transform: translateY(-2px) scale(1.05);
 }
 /* ------------------------------
    Footer
