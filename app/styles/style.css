@@ -104,6 +104,10 @@ body {
   text-align: center;
 }
 
+.skill-list li:hover {
+  transform: scale(1.2);
+  transition: transform 0.2s ease;
+}
 /* Animation */
 @keyframes scroll {
   0% {
@@ -214,6 +218,14 @@ body {
 .footer-link:hover .icon {
   transform: scale(1.1);
   opacity: 1;
+}
+
+.photo {
+  position: inline-block;
+  width: 250px;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 2rem;
 }
 
 /* ------------------------------
