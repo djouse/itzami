@@ -54,22 +54,24 @@ body {
 .introduction-section {
   display: block;
   container-type: inline-size;
-  margin: 8rem 3rem 5rem 3rem;
+  margin: 8rem 1rem 5rem 1rem;
   
 }
 .introduction-section h1{
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-
   font-size: clamp(4rem, 10cqw, 12rem); /* cqw = container query width */
   text-transform:uppercase;
   letter-spacing: -1px;
   font-weight: 600;
   line-height: 0.9;
-  margin-bottom: clamp(2rem, 4cqw, 5rem);
+  margin-bottom: clamp(1rem, 4cqw, 5rem);
+}
+.introduction-section p{
+
+  font-size: clamp(1rem, 7cqw, 5rem); /* cqw = container query width */
+  text-transform:uppercase;
+  letter-spacing: -1px;
+  font-weight: 400;
+  line-height: 0.9;
 }
 
 .separator-section {
@@ -77,17 +79,40 @@ body {
   border-style: solid;
   border-width: 0.1rem;
 }
-.introduction-section p{
-  font-size: clamp(2rem, 7cqw, 5rem); /* cqw = container query width */
-  text-transform:uppercase;
-  letter-spacing: -1px;
-  font-weight: 400;
-  line-height: 0.9;
-}
 /* ------------------------------
    Typography
 ------------------------------ */
 
+
+/* ------------------------------
+   Skill list
+------------------------------ */
+.skill-wrapper {
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+}
+
+.skill-list {
+  display: inline-flex;
+  animation: scroll 20s linear infinite;
+}
+
+.skill-list li {
+  display: inline-block;
+  padding: 14px;
+  text-align: center;
+}
+
+/* Animation */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
 /* ------------------------------
    Navbar
 ------------------------------ */
