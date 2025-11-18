@@ -5,11 +5,13 @@
 This project is a personal portfolio website designed to showcase my skills, projects, and experiences in web development. 
 
 The goal of this project is also to learn new technologies focusing on
+    
+* React
+* TypeScript
+* GSAP for animations
+* CSS
 
-    - :shipit: React
-    - :shipit: TypeScript
-    - :shipit: GSAP for animations
-    - :shipit: CSS
+Above all else trying to learn frontend design patterns should be fun. Let's see.
 
 ## TODO
 
