@@ -12,7 +12,7 @@ export function Hero() {
             <div className="separator-section" />
                 <SkillList />
             <div className="separator-section" />
-        </BubbleBackground>
+        </BubbleBackground> 
     </div>
   );
 }
