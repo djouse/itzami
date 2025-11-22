@@ -70,7 +70,7 @@ function BubbleBackground({
       ref={containerRef}
       data-slot="bubble-background"
       className={cn(
-        'relative size-full overflow-hidden bg-gradient-to-br from-violet-900 to-blue-900',
+        'relative size-full overflow-hidden bg-white',
         className,
       )}
       {...props}
@@ -111,8 +111,12 @@ function BubbleBackground({
       </svg>
 
       <div
-        className="absolute inset-0"
-        style={{ filter: 'url(#goo) blur(40px)' }}
+        style={{
+          position: 'absolute',
+          inset: 0,
+          filter: 'url(#goo) blur(40px)',
+          zIndex: 0
+        }}
       >
         <motion.div
           className="absolute rounded-full size-[80%] top-[10%] left-[10%] mix-blend-hard-light bg-[radial-gradient(circle_at_center,rgba(var(--first-color),0.8)_0%,rgba(var(--first-color),0)_50%)]"
@@ -166,7 +170,9 @@ function BubbleBackground({
         )}
       </div>
 
-      {children}
+      <div style={{ position: 'relative', zIndex: 1, height: '100%' }}>
+        {children}
+      </div>
     </div>
   );
 }

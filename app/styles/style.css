@@ -13,36 +13,99 @@
   padding: 0;
 }
 
+:root {
+  /* Layout variables */
+  --navbar-height: 3.5rem;
+  
+  /* Theme colors */
+  --radius: 0.625rem;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.13 0.028 261.692);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.13 0.028 261.692);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.13 0.028 261.692);
+  --primary: oklch(0.21 0.034 264.665);
+  --primary-foreground: oklch(0.985 0.002 247.839);
+  --secondary: oklch(0.967 0.003 264.542);
+  --secondary-foreground: oklch(0.21 0.034 264.665);
+  --muted: oklch(0.967 0.003 264.542);
+  --muted-foreground: oklch(0.551 0.027 264.364);
+  --accent: oklch(0.967 0.003 264.542);
+  --accent-foreground: oklch(0.21 0.034 264.665);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.928 0.006 264.531);
+  --input: oklch(0.928 0.006 264.531);
+  --ring: oklch(0.707 0.022 261.325);
+  
+  /* Custom theme colors for your design */
+  --text-primary: #111827;
+  --text-secondary: #1f2937;
+  --bg-primary: #ffffff;
+  --bg-secondary: #f9fafb;
+  --border-color: #e5e7eb;
+  --separator-color: #1d1d1d;
+}
+
 html {
   scroll-behavior: smooth;
   font-family: "Inter", sans-serif;
 }
 
-/* Make sure the page fills the viewport */
 html, body {
   height: 100%;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Layout wrapper for full height with sticky footer */
 .app-layout {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 
-/* Allow content to stretch while footer stays at bottom */
 .main-content {
   flex: 1;
-  padding: 1rem 1rem 1rem 1rem; 
 }
 
 body {
   font-size: 16px;
   line-height: 1.6;
-  color: #111827; /* gray-900 */
-  background-color: #ffffff;
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* ------------------------------
+   Dark Mode
+------------------------------ */
+.dark {
+  --background: oklch(0.13 0.028 261.692);
+  --foreground: oklch(0.985 0.002 247.839);
+  --card: oklch(0.21 0.034 264.665);
+  --card-foreground: oklch(0.985 0.002 247.839);
+  --popover: oklch(0.21 0.034 264.665);
+  --popover-foreground: oklch(0.985 0.002 247.839);
+  --primary: oklch(0.928 0.006 264.531);
+  --primary-foreground: oklch(0.21 0.034 264.665);
+  --secondary: oklch(0.278 0.033 256.848);
+  --secondary-foreground: oklch(0.985 0.002 247.839);
+  --muted: oklch(0.278 0.033 256.848);
+  --muted-foreground: oklch(0.707 0.022 261.325);
+  --accent: oklch(0.278 0.033 256.848);
+  --accent-foreground: oklch(0.985 0.002 247.839);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.551 0.027 264.364);
+  
+  /* Custom dark theme colors */
+  --text-primary: #f9fafb;
+  --text-secondary: #e5e7eb;
+  --bg-primary: #0f172a;
+  --bg-secondary: #1e293b;
+  --border-color: #334155;
+  --separator-color: #475569;
 }
 
 /* ------------------------------
@@ -55,43 +118,45 @@ body {
 }
 
 .hero {
-    width: 100%;
-    height: 100vh;
+  width: 100%;
+  height: calc(100vh - var(--navbar-height));
 }
 
 BubbleBackground {
-    z-index: -1;
+  z-index: -1;
 }
+
 .introduction-section {
   display: block;
   container-type: inline-size;
-  margin: 10% 2% 10% 2%;  
+  margin: 10% 2% 10% 2%;
 }
-.introduction-section h1{
-  font-size: clamp(4rem, 12cqw, 16rem); /* cqw = container query width */
-  text-transform:uppercase;
+
+.introduction-section h1 {
+  font-size: clamp(4rem, 12cqw, 16rem);
+  text-transform: uppercase;
   letter-spacing: -1px;
   font-weight: 600;
   line-height: 0.9;
   margin-bottom: clamp(1rem, 5cqw, 8rem);
+  color: var(--text-primary);
 }
-.introduction-section p{
 
-  font-size: clamp(1rem, 7cqw, 5rem); /* cqw = container query width */
-  text-transform:uppercase;
+.introduction-section p {
+  font-size: clamp(1rem, 7cqw, 5rem);
+  text-transform: uppercase;
   letter-spacing: -1px;
   font-weight: 400;
   line-height: 0.9;
+  color: var(--text-primary);
 }
 
 .separator-section {
   width: 100%;
   border-style: solid;
   border-width: 0.1rem;
+  border-color: var(--separator-color);
 }
-/* ------------------------------
-   Typography
------------------------------- */
 
 /* ------------------------------
    Skill list
@@ -111,13 +176,14 @@ BubbleBackground {
   display: inline-block;
   padding: 14px;
   text-align: center;
+  color: var(--text-primary);
 }
 
 .skill-list li:hover {
   transform: scale(1.2);
   transition: transform 0.2s ease;
 }
-/* Animation */
+
 @keyframes scroll {
   0% {
     transform: translateX(0);
@@ -126,6 +192,7 @@ BubbleBackground {
     transform: translateX(-50%);
   }
 }
+
 /* ------------------------------
    Navbar
 ------------------------------ */
@@ -133,27 +200,23 @@ BubbleBackground {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #fff;
-  border-bottom: 0.12rem solid rgba(0, 0, 0, 0);
-  border-bottom-color: #111827;
-
+  background-color: var(--bg-primary);
+  border-bottom: 0.12rem solid var(--border-color);
   position: sticky;
   top: 0;
   z-index: 10;
-  padding-left: 1rem;
-  padding-bottom: 0.5rem;
-  padding-right: 1rem;
-  padding-top: 0.5rem;
+  padding: 0.5rem 1rem;
+  min-height: var(--navbar-height);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .brand {
   font-size: 1.25rem;
   font-weight: 500;
-  color: #1f2937;
+  color: var(--text-secondary);
   text-decoration: none;
   letter-spacing: 0.02em;
   line-height: 0.9;
-
 }
 
 .brand h4 {
@@ -164,43 +227,71 @@ BubbleBackground {
 .brand p {
   font-weight: 300;
   font-size: 0.875rem;
-
 }
 
 .nav-links {
   display: flex;
   gap: 2rem;
+  align-items: center;
 }
 
 .nav-link {
-  color: #1f2937;
+  color: var(--text-secondary);
   text-decoration: none;
   font-weight: 500;
   transition: color 0.2s ease, transform 0.2s ease;
 }
 
 .nav-link:hover {
-  color: #232324; /* blue-600 */
+  color: var(--text-primary);
   transform: translateY(-1px);
 }
 
+/* Theme Toggle Button */
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: transparent;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.theme-toggle:hover {
+  background-color: var(--bg-secondary);
+  transform: translateY(-1px);
+}
+
+.theme-toggle svg {
+  width: 20px;
+  height: 20px;
+}
+
 /* ------------------------------
-   on Click go up effect
+   Up Icon
 ------------------------------ */
 .up-icon {
-  position: fixed; /* Use fixed instead of sticky */
+  position: fixed;
   right: 1rem;
-  top: 5rem; /* Position below navbar */
+  top: calc(var(--navbar-height) + 1.5rem);
   width: 5rem;
   height: 5rem;
-  z-index: 9; /* Below navbar (10) but above content */
+  z-index: 9;
   cursor: pointer;
   transition: transform 0.2s ease;
+  opacity: 0.8;
 }
 
 .up-icon:hover {
   transform: translateY(-2px) scale(1.05);
+  opacity: 1;
 }
+
 /* ------------------------------
    Footer
 ------------------------------ */
@@ -209,7 +300,9 @@ BubbleBackground {
   justify-content: flex-start;
   align-items: center;
   padding: 1rem 2rem;
-  border-top: 1px solid #e5e7eb;
+  border-top: 1px solid var(--border-color);
+  background-color: var(--bg-primary);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .footer-links {
@@ -254,6 +347,10 @@ img {
    Responsive Adjustments
 ------------------------------ */
 @media (max-width: 768px) {
+  :root {
+    --navbar-height: 3rem;
+  }
+
   .nav-links {
     gap: 1rem;
   }
@@ -305,75 +402,6 @@ img {
   --color-sidebar-ring: var(--sidebar-ring);
 }
 
-:root {
-  --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.13 0.028 261.692);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.13 0.028 261.692);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.13 0.028 261.692);
-  --primary: oklch(0.21 0.034 264.665);
-  --primary-foreground: oklch(0.985 0.002 247.839);
-  --secondary: oklch(0.967 0.003 264.542);
-  --secondary-foreground: oklch(0.21 0.034 264.665);
-  --muted: oklch(0.967 0.003 264.542);
-  --muted-foreground: oklch(0.551 0.027 264.364);
-  --accent: oklch(0.967 0.003 264.542);
-  --accent-foreground: oklch(0.21 0.034 264.665);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.928 0.006 264.531);
-  --input: oklch(0.928 0.006 264.531);
-  --ring: oklch(0.707 0.022 261.325);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.985 0.002 247.839);
-  --sidebar-foreground: oklch(0.13 0.028 261.692);
-  --sidebar-primary: oklch(0.21 0.034 264.665);
-  --sidebar-primary-foreground: oklch(0.985 0.002 247.839);
-  --sidebar-accent: oklch(0.967 0.003 264.542);
-  --sidebar-accent-foreground: oklch(0.21 0.034 264.665);
-  --sidebar-border: oklch(0.928 0.006 264.531);
-  --sidebar-ring: oklch(0.707 0.022 261.325);
-}
-
-.dark {
-  --background: oklch(0.13 0.028 261.692);
-  --foreground: oklch(0.985 0.002 247.839);
-  --card: oklch(0.21 0.034 264.665);
-  --card-foreground: oklch(0.985 0.002 247.839);
-  --popover: oklch(0.21 0.034 264.665);
-  --popover-foreground: oklch(0.985 0.002 247.839);
-  --primary: oklch(0.928 0.006 264.531);
-  --primary-foreground: oklch(0.21 0.034 264.665);
-  --secondary: oklch(0.278 0.033 256.848);
-  --secondary-foreground: oklch(0.985 0.002 247.839);
-  --muted: oklch(0.278 0.033 256.848);
-  --muted-foreground: oklch(0.707 0.022 261.325);
-  --accent: oklch(0.278 0.033 256.848);
-  --accent-foreground: oklch(0.985 0.002 247.839);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.551 0.027 264.364);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.21 0.034 264.665);
-  --sidebar-foreground: oklch(0.985 0.002 247.839);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0.002 247.839);
-  --sidebar-accent: oklch(0.278 0.033 256.848);
-  --sidebar-accent-foreground: oklch(0.985 0.002 247.839);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.551 0.027 264.364);
-}
-
 @layer base {
   * {
     @apply border-border outline-ring/50;
@@ -382,4 +410,3 @@ img {
     @apply bg-background text-foreground;
   }
 }
-
