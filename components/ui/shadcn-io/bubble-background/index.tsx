@@ -26,8 +26,9 @@ function BubbleBackground({
   ref,
   className,
   children,
+  style,
   interactive = true,
-  transition = { stiffness: 100, damping: 20 },
+  transition = { stiffness: 10, damping: 20 },
   colors = {
     first: '18,113,255',
     second: '221,74,255',
@@ -70,7 +71,7 @@ function BubbleBackground({
       ref={containerRef}
       data-slot="bubble-background"
       className={cn(
-        'relative size-full overflow-hidden bg-white',
+        'relative size-full overflow-hidden',
         className,
       )}
       {...props}

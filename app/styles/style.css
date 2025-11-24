@@ -39,8 +39,8 @@
   --ring: oklch(0.707 0.022 261.325);
   
   /* Custom theme colors for your design */
-  --text-primary: #111827;
-  --text-secondary: #1f2937;
+  --text-primary: #181818;
+  --text-secondary: #323232;
   --bg-primary: #ffffff;
   --bg-secondary: #f9fafb;
   --border-color: #e5e7eb;
@@ -80,7 +80,7 @@ body {
    Dark Mode
 ------------------------------ */
 .dark {
-  --background: oklch(0.13 0.028 261.692);
+  --background: oklch(24.354% 0.00003 271.152);
   --foreground: oklch(0.985 0.002 247.839);
   --card: oklch(0.21 0.034 264.665);
   --card-foreground: oklch(0.985 0.002 247.839);
@@ -92,20 +92,20 @@ body {
   --secondary-foreground: oklch(0.985 0.002 247.839);
   --muted: oklch(0.278 0.033 256.848);
   --muted-foreground: oklch(0.707 0.022 261.325);
-  --accent: oklch(0.278 0.033 256.848);
+  --accent: oklch(34.211% 0.01629 255.672);
   --accent-foreground: oklch(0.985 0.002 247.839);
   --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
+  --border: oklch(31.918% 0.00283 16.601 / 0.1);
   --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.551 0.027 264.364);
+  --ring: oklch(55.501% 0.01813 266.201);
   
   /* Custom dark theme colors */
   --text-primary: #f9fafb;
   --text-secondary: #e5e7eb;
-  --bg-primary: #0f172a;
-  --bg-secondary: #1e293b;
-  --border-color: #334155;
-  --separator-color: #475569;
+  --bg-primary: #1a1a1a;
+  --bg-secondary: #2c2c2c;
+  --border-color: #545454;
+  --separator-color: #535353;
 }
 
 /* ------------------------------

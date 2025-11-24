@@ -71,6 +71,8 @@ export function Navbar() {
       document.documentElement.classList.remove('dark');
       localStorage.setItem('theme', 'light');
     }
+    
+    window.dispatchEvent(new Event('themeChange'));
   };
 
   return (
